@@ -182,7 +182,7 @@ public class AniPung {
 			{
 				int game_num = sc.nextInt();
 				
-				if(game_num>4)
+				if(game_num<1 || game_num>4)
 				{
 					System.out.println("1~4 이내의 숫자로 입력해주세요.");
 				}

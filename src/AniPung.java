@@ -188,6 +188,7 @@ public class AniPung {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[][] game = new int[5][5];
+		int check = 0;
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -196,18 +197,22 @@ public class AniPung {
 			for(int j=0; j<5; j++)
 			{
 				int game_num = sc.nextInt();
-				
-				if(game_num<1 || game_num>4)
+				game[i][j] = game_num;
+
+				if(game[i][j]<1 || game[i][j]>4)
 				{
-					System.out.println("1~4 이내의 숫자로 입력해주세요.");
-				}
-				else
-				{
-					game[i][j] = game_num;
+					check=1;
 				}
 			}
 		}
 		
-		AniPung ani = new AniPung(game);
+		if(check==1)
+		{
+			System.out.println("1~4 이내의 숫자들로 입력해주세요.");
+		}
+		else
+		{
+			AniPung ani = new AniPung(game);
+		}
 	}	
 }
